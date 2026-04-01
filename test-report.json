@@ -1,0 +1,155 @@
+{"Time":"2026-04-01T13:59:39.268350037Z","Action":"start","Package":"github.com/numspot/numspot-plugin-packer"}
+{"Time":"2026-04-01T13:59:40.897428471Z","Action":"start","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu"}
+{"Time":"2026-04-01T13:59:40.897701119Z","Action":"start","Package":"github.com/numspot/numspot-plugin-packer/builder/common"}
+{"Time":"2026-04-01T13:59:40.89780557Z","Action":"start","Package":"github.com/numspot/numspot-plugin-packer/builder/common/retry"}
+{"Time":"2026-04-01T13:59:40.897944789Z","Action":"start","Package":"github.com/numspot/numspot-plugin-packer/numspot"}
+{"Time":"2026-04-01T13:59:40.918602939Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common/retry","Test":"TestRetry"}
+{"Time":"2026-04-01T13:59:40.918645581Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common/retry","Test":"TestRetry","Output":"=== RUN   TestRetry\n"}
+{"Time":"2026-04-01T13:59:40.91871063Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common/retry","Test":"TestRetry","Output":"--- PASS: TestRetry (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.91873455Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common/retry","Test":"TestRetry","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.918780002Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common/retry","Output":"PASS\n"}
+{"Time":"2026-04-01T13:59:40.921043243Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestNewNumspotClient"}
+{"Time":"2026-04-01T13:59:40.921062083Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestNewNumspotClient","Output":"=== RUN   TestNewNumspotClient\n"}
+{"Time":"2026-04-01T13:59:40.944702464Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestNewNumspotClient","Output":"--- PASS: TestNewNumspotClient (0.02s)\n"}
+{"Time":"2026-04-01T13:59:40.95046036Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common/retry","Output":"coverage: 0.1% of statements in ./...\n"}
+{"Time":"2026-04-01T13:59:40.951281995Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestNewNumspotClient","Elapsed":0.02}
+{"Time":"2026-04-01T13:59:40.951528452Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestTokenRefresh"}
+{"Time":"2026-04-01T13:59:40.951537117Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestTokenRefresh","Output":"=== RUN   TestTokenRefresh\n"}
+{"Time":"2026-04-01T13:59:40.973950183Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilder_ImplementsBuilder"}
+{"Time":"2026-04-01T13:59:40.973997792Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilder_ImplementsBuilder","Output":"=== RUN   TestBuilder_ImplementsBuilder\n"}
+{"Time":"2026-04-01T13:59:40.9740407Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifact_Impl"}
+{"Time":"2026-04-01T13:59:40.97405107Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifact_Impl","Output":"=== RUN   TestArtifact_Impl\n"}
+{"Time":"2026-04-01T13:59:40.974283013Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilder_ImplementsBuilder","Output":"--- PASS: TestBuilder_ImplementsBuilder (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.974352256Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilder_ImplementsBuilder","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.974414007Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilder_Prepare_BadType"}
+{"Time":"2026-04-01T13:59:40.974419175Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilder_Prepare_BadType","Output":"=== RUN   TestBuilder_Prepare_BadType\n"}
+{"Time":"2026-04-01T13:59:40.97537757Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilder_Prepare_BadType","Output":"--- PASS: TestBuilder_Prepare_BadType (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.975409376Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifact_Impl","Output":"--- PASS: TestArtifact_Impl (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.975450713Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifact_Impl","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.975450568Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilder_Prepare_BadType","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.975458683Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactId"}
+{"Time":"2026-04-01T13:59:40.975462525Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactId","Output":"=== RUN   TestArtifactId\n"}
+{"Time":"2026-04-01T13:59:40.97546731Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactId","Output":"--- PASS: TestArtifactId (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.975470547Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactId","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.975473081Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState_atlasMetadata"}
+{"Time":"2026-04-01T13:59:40.975475272Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState_atlasMetadata","Output":"=== RUN   TestArtifactState_atlasMetadata\n"}
+{"Time":"2026-04-01T13:59:40.975484777Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState_atlasMetadata","Output":"--- PASS: TestArtifactState_atlasMetadata (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.975488214Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState_atlasMetadata","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.975490705Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactString"}
+{"Time":"2026-04-01T13:59:40.975493036Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactString","Output":"=== RUN   TestArtifactString\n"}
+{"Time":"2026-04-01T13:59:40.975496141Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactString","Output":"--- PASS: TestArtifactString (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.975499452Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactString","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.97550195Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState"}
+{"Time":"2026-04-01T13:59:40.975504283Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState","Output":"=== RUN   TestArtifactState\n"}
+{"Time":"2026-04-01T13:59:40.97550602Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_ImageName"}
+{"Time":"2026-04-01T13:59:40.97551095Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState","Output":"--- PASS: TestArtifactState (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.975512673Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_ImageName","Output":"=== RUN   TestBuilderPrepare_ImageName\n"}
+{"Time":"2026-04-01T13:59:40.97551415Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.975519242Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState_hcpPackerRegistryMetadata"}
+{"Time":"2026-04-01T13:59:40.975524133Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState_hcpPackerRegistryMetadata","Output":"=== RUN   TestArtifactState_hcpPackerRegistryMetadata\n"}
+{"Time":"2026-04-01T13:59:40.975535442Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState_hcpPackerRegistryMetadata","Output":"--- PASS: TestArtifactState_hcpPackerRegistryMetadata (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.975538219Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestArtifactState_hcpPackerRegistryMetadata","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.975540654Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestBlockDevice_LaunchDevices"}
+{"Time":"2026-04-01T13:59:40.9755429Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestBlockDevice_LaunchDevices","Output":"=== RUN   TestBlockDevice_LaunchDevices\n"}
+{"Time":"2026-04-01T13:59:40.975697301Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestBlockDevice_LaunchDevices","Output":"--- PASS: TestBlockDevice_LaunchDevices (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.97572032Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestBlockDevice_LaunchDevices","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.975726634Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestBlockDevice_Image"}
+{"Time":"2026-04-01T13:59:40.97573053Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestBlockDevice_Image","Output":"=== RUN   TestBlockDevice_Image\n"}
+{"Time":"2026-04-01T13:59:40.975906679Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestBlockDevice_Image","Output":"--- PASS: TestBlockDevice_Image (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.975916479Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestBlockDevice_Image","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.975920277Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestInterpolateBuildInfo_extractBuildInfo_noSourceImage"}
+{"Time":"2026-04-01T13:59:40.975924036Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestInterpolateBuildInfo_extractBuildInfo_noSourceImage","Output":"=== RUN   TestInterpolateBuildInfo_extractBuildInfo_noSourceImage\n"}
+{"Time":"2026-04-01T13:59:40.976964618Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestInterpolateBuildInfo_extractBuildInfo_noSourceImage","Output":"--- PASS: TestInterpolateBuildInfo_extractBuildInfo_noSourceImage (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.976984341Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestInterpolateBuildInfo_extractBuildInfo_noSourceImage","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.976988704Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestInterpolateBuildInfo_extractBuildInfo_withSourceImage"}
+{"Time":"2026-04-01T13:59:40.976992038Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestInterpolateBuildInfo_extractBuildInfo_withSourceImage","Output":"=== RUN   TestInterpolateBuildInfo_extractBuildInfo_withSourceImage\n"}
+{"Time":"2026-04-01T13:59:40.976995457Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestInterpolateBuildInfo_extractBuildInfo_withSourceImage","Output":"--- PASS: TestInterpolateBuildInfo_extractBuildInfo_withSourceImage (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.976998187Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestInterpolateBuildInfo_extractBuildInfo_withSourceImage","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.977001131Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare"}
+{"Time":"2026-04-01T13:59:40.977003834Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare","Output":"=== RUN   TestRunConfigPrepare\n"}
+{"Time":"2026-04-01T13:59:40.977007442Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare","Output":"--- PASS: TestRunConfigPrepare (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.977010097Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.977014017Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_VmType"}
+{"Time":"2026-04-01T13:59:40.977016193Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_VmType","Output":"=== RUN   TestRunConfigPrepare_VmType\n"}
+{"Time":"2026-04-01T13:59:40.977019201Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_VmType","Output":"--- PASS: TestRunConfigPrepare_VmType (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.977021533Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_VmType","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.977034468Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImage"}
+{"Time":"2026-04-01T13:59:40.977037147Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImage","Output":"=== RUN   TestRunConfigPrepare_SourceImage\n"}
+{"Time":"2026-04-01T13:59:40.977040524Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImage","Output":"--- PASS: TestRunConfigPrepare_SourceImage (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.977043213Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImage","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.977045749Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterBlank"}
+{"Time":"2026-04-01T13:59:40.977048107Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterBlank","Output":"=== RUN   TestRunConfigPrepare_SourceImageFilterBlank\n"}
+{"Time":"2026-04-01T13:59:40.977054644Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterBlank","Output":"--- PASS: TestRunConfigPrepare_SourceImageFilterBlank (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.977059579Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterBlank","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.977062917Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterOwnersBlank"}
+{"Time":"2026-04-01T13:59:40.977065246Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterOwnersBlank","Output":"=== RUN   TestRunConfigPrepare_SourceImageFilterOwnersBlank\n"}
+{"Time":"2026-04-01T13:59:40.977068239Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterOwnersBlank","Output":"--- PASS: TestRunConfigPrepare_SourceImageFilterOwnersBlank (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.977070737Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterOwnersBlank","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.977079437Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterGood"}
+{"Time":"2026-04-01T13:59:40.977082864Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterGood","Output":"=== RUN   TestRunConfigPrepare_SourceImageFilterGood\n"}
+{"Time":"2026-04-01T13:59:40.977086981Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterGood","Output":"--- PASS: TestRunConfigPrepare_SourceImageFilterGood (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.977089963Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SourceImageFilterGood","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.977094017Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_EnableT2UnlimitedGood"}
+{"Time":"2026-04-01T13:59:40.977097031Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_EnableT2UnlimitedGood","Output":"=== RUN   TestRunConfigPrepare_EnableT2UnlimitedGood\n"}
+{"Time":"2026-04-01T13:59:40.985008181Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestTokenRefresh","Output":"--- PASS: TestTokenRefresh (0.03s)\n"}
+{"Time":"2026-04-01T13:59:40.985042799Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestTokenRefresh","Elapsed":0.03}
+{"Time":"2026-04-01T13:59:40.985049345Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestInvalidClientID"}
+{"Time":"2026-04-01T13:59:40.985052158Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestInvalidClientID","Output":"=== RUN   TestInvalidClientID\n"}
+{"Time":"2026-04-01T13:59:40.985061659Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestInvalidClientID","Output":"--- PASS: TestInvalidClientID (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.985064544Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestInvalidClientID","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.985067328Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestInvalidSpaceID"}
+{"Time":"2026-04-01T13:59:40.985069595Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestInvalidSpaceID","Output":"=== RUN   TestInvalidSpaceID\n"}
+{"Time":"2026-04-01T13:59:40.985072893Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestInvalidSpaceID","Output":"--- PASS: TestInvalidSpaceID (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.985077178Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestInvalidSpaceID","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.98507984Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestAuthenticationFailure"}
+{"Time":"2026-04-01T13:59:40.985082186Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestAuthenticationFailure","Output":"=== RUN   TestAuthenticationFailure\n"}
+{"Time":"2026-04-01T13:59:40.985085782Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestAuthenticationFailure","Output":"--- PASS: TestAuthenticationFailure (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.985088645Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/numspot","Test":"TestAuthenticationFailure","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.98509981Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Output":"PASS\n"}
+{"Time":"2026-04-01T13:59:40.985114752Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_EnableT2UnlimitedGood","Output":"--- PASS: TestRunConfigPrepare_EnableT2UnlimitedGood (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.985118457Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_EnableT2UnlimitedGood","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.985121278Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_EnableT2UnlimitedBadVmType"}
+{"Time":"2026-04-01T13:59:40.985123582Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_EnableT2UnlimitedBadVmType","Output":"=== RUN   TestRunConfigPrepare_EnableT2UnlimitedBadVmType\n"}
+{"Time":"2026-04-01T13:59:40.985126398Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_EnableT2UnlimitedBadVmType","Output":"--- PASS: TestRunConfigPrepare_EnableT2UnlimitedBadVmType (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.985129718Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_EnableT2UnlimitedBadVmType","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.985132266Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SSHPort"}
+{"Time":"2026-04-01T13:59:40.985134476Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SSHPort","Output":"=== RUN   TestRunConfigPrepare_SSHPort\n"}
+{"Time":"2026-04-01T13:59:40.985137458Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SSHPort","Output":"--- PASS: TestRunConfigPrepare_SSHPort (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.985140149Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_SSHPort","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.985142522Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_UserData"}
+{"Time":"2026-04-01T13:59:40.985144667Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_UserData","Output":"=== RUN   TestRunConfigPrepare_UserData\n"}
+{"Time":"2026-04-01T13:59:40.985147347Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_UserData","Output":"--- PASS: TestRunConfigPrepare_UserData (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.985149595Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_UserData","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.985154535Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_UserDataFile"}
+{"Time":"2026-04-01T13:59:40.985156581Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_UserDataFile","Output":"=== RUN   TestRunConfigPrepare_UserDataFile\n"}
+{"Time":"2026-04-01T13:59:40.985159505Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_UserDataFile","Output":"--- PASS: TestRunConfigPrepare_UserDataFile (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.98516198Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_UserDataFile","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.985164463Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_TemporaryKeyPairName"}
+{"Time":"2026-04-01T13:59:40.985166546Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_TemporaryKeyPairName","Output":"=== RUN   TestRunConfigPrepare_TemporaryKeyPairName\n"}
+{"Time":"2026-04-01T13:59:40.985169233Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_TemporaryKeyPairName","Output":"--- PASS: TestRunConfigPrepare_TemporaryKeyPairName (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.985171541Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Test":"TestRunConfigPrepare_TemporaryKeyPairName","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.985173739Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Output":"PASS\n"}
+{"Time":"2026-04-01T13:59:40.991627813Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_ImageName","Output":"--- PASS: TestBuilderPrepare_ImageName (0.02s)\n"}
+{"Time":"2026-04-01T13:59:40.991749323Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_ImageName","Elapsed":0.02}
+{"Time":"2026-04-01T13:59:40.991810171Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_InvalidKey"}
+{"Time":"2026-04-01T13:59:40.991815498Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_InvalidKey","Output":"=== RUN   TestBuilderPrepare_InvalidKey\n"}
+{"Time":"2026-04-01T13:59:40.993366549Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_InvalidKey","Output":"--- PASS: TestBuilderPrepare_InvalidKey (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.993562458Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_InvalidKey","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.993683411Z","Action":"run","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_InvalidShutdownBehavior"}
+{"Time":"2026-04-01T13:59:40.993689214Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_InvalidShutdownBehavior","Output":"=== RUN   TestBuilderPrepare_InvalidShutdownBehavior\n"}
+{"Time":"2026-04-01T13:59:40.998282451Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_InvalidShutdownBehavior","Output":"--- PASS: TestBuilderPrepare_InvalidShutdownBehavior (0.00s)\n"}
+{"Time":"2026-04-01T13:59:40.998438466Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Test":"TestBuilderPrepare_InvalidShutdownBehavior","Elapsed":0}
+{"Time":"2026-04-01T13:59:40.998560898Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Output":"PASS\n"}
+{"Time":"2026-04-01T13:59:41.01108708Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Output":"coverage: 0.6% of statements in ./...\n"}
+{"Time":"2026-04-01T13:59:41.012548261Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Output":"coverage: 0.9% of statements in ./...\n"}
+{"Time":"2026-04-01T13:59:41.027528741Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Output":"coverage: 0.6% of statements in ./...\n"}
+{"Time":"2026-04-01T13:59:42.100845819Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common/retry","Output":"ok  \tgithub.com/numspot/numspot-plugin-packer/builder/common/retry\t1.201s\tcoverage: 0.1% of statements in ./...\n"}
+{"Time":"2026-04-01T13:59:42.112131803Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common/retry","Elapsed":1.214}
+{"Time":"2026-04-01T13:59:42.119856174Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Output":"ok  \tgithub.com/numspot/numspot-plugin-packer/builder/common\t1.221s\tcoverage: 0.9% of statements in ./...\n"}
+{"Time":"2026-04-01T13:59:42.122950809Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/numspot","Output":"ok  \tgithub.com/numspot/numspot-plugin-packer/numspot\t1.224s\tcoverage: 0.6% of statements in ./...\n"}
+{"Time":"2026-04-01T13:59:42.131026206Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/common","Elapsed":1.233}
+{"Time":"2026-04-01T13:59:42.133998843Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/numspot","Elapsed":1.236}
+{"Time":"2026-04-01T13:59:42.138842952Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Output":"ok  \tgithub.com/numspot/numspot-plugin-packer/builder/bsu\t1.240s\tcoverage: 0.6% of statements in ./...\n"}
+{"Time":"2026-04-01T13:59:42.150006537Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer/builder/bsu","Elapsed":1.2530000000000001}
+{"Time":"2026-04-01T13:59:43.081150664Z","Action":"output","Package":"github.com/numspot/numspot-plugin-packer","Output":"\tgithub.com/numspot/numspot-plugin-packer\t\tcoverage: 0.0% of statements\n"}
+{"Time":"2026-04-01T13:59:43.154523104Z","Action":"pass","Package":"github.com/numspot/numspot-plugin-packer","Elapsed":3.886}

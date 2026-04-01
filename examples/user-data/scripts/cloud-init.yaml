@@ -1,0 +1,59 @@
+#cloud-config
+
+package_update: true
+package_upgrade: true
+
+packages:
+  - nginx
+  - curl
+  - wget
+
+write_files:
+  - path: /opt/webapp/config.json
+    content: |
+      {
+        "name": "webapp",
+        "version": "1.0.0",
+        "deployed_at": "${timestamp}"
+      }
+    permissions: '0644'
+    owner: root:root
+
+  - path: /var/www/html/index.html
+    content: |
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Numspot Example</title>
+      </head>
+      <body>
+        <h1>Hello from Numspot!</h1>
+        <p>This image was built with Packer and configured via cloud-init.</p>
+      </body>
+      </html>
+    permissions: '0644'
+    owner: root:root
+
+  - path: /etc/systemd/system/webapp-health.service
+    content: |
+      [Unit]
+      Description=Webapp Health Check
+      After=network.target
+
+      [Service]
+      Type=simple
+      ExecStart=/usr/bin/curl -f http://localhost/ || exit 1
+      Restart=on-failure
+
+      [Install]
+      WantedBy=multi-user.target
+    permissions: '0644'
+    owner: root:root
+
+runcmd:
+  - systemctl enable nginx
+  - systemctl start nginx
+  - mkdir -p /opt/webapp/logs
+  - echo "Cloud-init completed at $(date)" > /opt/webapp/logs/init.log
+
+final_message: "Cloud-init completed after $UPTIME seconds"
