@@ -7,12 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.0] - 2026-04-01
+## [0.1.0] - 2026-04-13
 
 ### Added
 
-- Initial release of Numspot Packer plugin
+- Initial public release of Numspot Packer plugin
 - `numspot-bsu` builder for creating Numspot Images from source images
+- `numspot-bsu` image datasource for resolving images by filter before the build starts
 - OAuth2 authentication with automatic token refresh
 - Support for all Numspot VM types (`ns-eco7-2c2r`, `ns-eco7-4c4r`, etc.)
 - Automatic subnet discovery or explicit subnet configuration
@@ -27,10 +28,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Known Limitations
 
 - Only BSU builder implemented (chroot, bsusurrogate, bsuvolume builders not yet available)
-- No datasource component (image lookup in HCL)
 
 ### Dependencies
 
-- Go 1.24+
+- Go 1.22+
 - Packer SDK v0.6+
 - Numspot SDK (generated from OpenAPI spec)

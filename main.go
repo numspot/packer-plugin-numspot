@@ -9,12 +9,14 @@ import (
 	"github.com/hashicorp/packer-plugin-sdk/version"
 
 	"github.com/numspot/numspot-plugin-packer/builder/bsu"
+	"github.com/numspot/numspot-plugin-packer/datasource/image"
 )
 
 func main() {
 	pps := plugin.NewSet()
 	pps.SetVersion(pluginVersion)
 	pps.RegisterBuilder("bsu", new(bsu.Builder))
+	pps.RegisterDatasource("image", new(image.Datasource))
 	err := pps.Run()
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err.Error())
@@ -24,6 +26,6 @@ func main() {
 
 var (
 	pluginVersion = version.NewPluginVersion(semver, prerelease, "")
-	semver        = "1.0.0"
-	prerelease    = "dev"
+	semver        = "0.1.0"
+	prerelease    = ""
 )

@@ -9,6 +9,7 @@ A minimal example that builds a Numspot image from a Rancher Debian base image w
 export PKR_VAR_client_id="<your-client-id>"
 export PKR_VAR_client_secret="<your-client-secret>"
 export PKR_VAR_space_id="<your-space-id>"
+export PKR_VAR_subnet_id="<your-subnet-id>"  # Subnet with IGW + route table
 
 # Build
 packer build .

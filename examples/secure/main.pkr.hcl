@@ -17,7 +17,8 @@ source "numspot-bsu" "secure" {
   vm_type      = "ns-eco7-2c2r"
   ssh_username = "outscale"
 
-  subnet_id                            = var.subnet_id != "" ? var.subnet_id : null
+  # Required: Subnet with Internet Gateway and route table setup
+  subnet_id                            = var.subnet_id
   associate_public_ip_address          = true
   ssh_interface                        = "public_ip"
 

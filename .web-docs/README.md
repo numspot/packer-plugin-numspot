@@ -1,6 +1,6 @@
 # Numspot Packer Plugin
 
-The Numspot Packer plugin provides a builder for creating machine images on the Numspot cloud platform.
+The Numspot Packer plugin provides a builder and datasource for creating machine images on the Numspot cloud platform.
 
 ## Installation
 
@@ -28,6 +28,12 @@ packer init .
 | Builder | Description |
 |---------|-------------|
 | [bsu](./components/builder/bsu) | Creates Numspot Images from source images using BSU-backed volumes |
+
+## Data Sources
+
+| Datasource | Description |
+|------------|-------------|
+| [image](./components/datasource/image) | Resolves a Numspot image by filter before the build starts |
 
 ## Authentication
 

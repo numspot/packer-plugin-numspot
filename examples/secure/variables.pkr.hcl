@@ -22,6 +22,5 @@ variable "allowed_ssh_cidr" {
 
 variable "subnet_id" {
   type        = string
-  default     = ""
-  description = "Subnet ID (leave empty for auto-discovery)"
+  description = "Subnet ID with Internet Gateway and route table setup (strongly recommended to specify explicitly)"
 }

@@ -183,7 +183,6 @@ func decryptPasswordDataWithPrivateKey(passwordData string, pemBytes []byte) (st
 		return "", fmt.Errorf("parsing private key: %w", err)
 	}
 
-	//nolint:staticcheck // SA1019: Cloud providers encrypt Windows passwords with PKCS#1 v1.5.
 	// We cannot change the encryption method used by the cloud API.
 	out, err := rsa.DecryptPKCS1v15(nil, key, encryptedPasswd)
 	if err != nil {

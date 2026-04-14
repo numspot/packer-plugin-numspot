@@ -3,6 +3,7 @@ package common
 import (
 	"context"
 	"encoding/base64"
+	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -16,6 +17,8 @@ import (
 
 	"github.com/numspot/numspot-plugin-packer/numspot"
 )
+
+var errLinkPublicIp = errors.New("error linking PublicIp to VM")
 
 const (
 	// RunSourceVmBSUExpectedRootDevice is the expected root device type for BSU-backed VMs.
@@ -240,7 +243,7 @@ func (s *StepRunSourceVm) Run(
 		linkReq := numspot.LinkPublicIpJSONBody{
 			VmId: &vmId,
 		}
-		_, err := apiClient.LinkPublicIpWithResponse(
+		linkResp, err := apiClient.LinkPublicIpWithResponse(
 			ctx,
 			spaceUuid,
 			publicipId,
@@ -248,6 +251,16 @@ func (s *StepRunSourceVm) Run(
 		)
 		if err != nil {
 			state.Put("error", fmt.Errorf("error linking PublicIp to VM: %w", err))
+			ui.Error(err.Error())
+			return multistep.ActionHalt
+		}
+		if linkResp.JSON200 == nil {
+			errBody := string(linkResp.Body)
+			if linkResp.ApplicationproblemJSON400 != nil && linkResp.ApplicationproblemJSON400.Detail != nil {
+				errBody = *linkResp.ApplicationproblemJSON400.Detail
+			}
+			err := fmt.Errorf("%w: status %d, %s", errLinkPublicIp, linkResp.StatusCode(), errBody)
+			state.Put("error", err)
 			ui.Error(err.Error())
 			return multistep.ActionHalt
 		}

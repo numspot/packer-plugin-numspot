@@ -10,4 +10,10 @@ integration {
     name = "Numspot BSU"
     slug = "bsu"
   }
+
+  component {
+    type = "data-source"
+    name = "Numspot BSU Image"
+    slug = "image"
+  }
 }

@@ -16,5 +16,10 @@ variable "space_id" {
 
 variable "subnet_id" {
   type        = string
-  description = "Subnet ID with Internet Gateway and route table setup (strongly recommended to specify explicitly)"
+  description = "Subnet ID with Internet Gateway and route table setup"
+}
+
+variable "source_image_name" {
+  type        = string
+  description = "Exact name of the source image to look up via the datasource"
 }

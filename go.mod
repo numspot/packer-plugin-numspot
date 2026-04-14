@@ -1,6 +1,6 @@
 module github.com/numspot/numspot-plugin-packer
 
-go 1.26.1
+go 1.24.0
 
 require (
 	github.com/aws/aws-sdk-go v1.55.7

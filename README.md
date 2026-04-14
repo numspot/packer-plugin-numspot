@@ -13,15 +13,6 @@ This plugin enables building Numspot Images from source images using Packer. It 
 - [ADR-0001: Design Document](./adr/0001-packer-plugin-numspot.md)
 - [API Mapping Reference](./API_MAPPING.md)
 
-## Project Status
-
-| Phase | Status |
-|-------|--------|
-| Phase 1: SDK Generation | ✅ Complete |
-| Phase 2: Plugin Adaptation | ✅ Complete |
-| Phase 3: HCL Generation | ✅ Complete |
-| Phase 4: Testing & Documentation | ✅ Complete |
-
 ## Prerequisites
 
 Before using this plugin, ensure the following:
@@ -33,13 +24,65 @@ Before using this plugin, ensure the following:
 
 ### 2. Network Infrastructure
 
-The following must exist before running Packer:
+The following network infrastructure **must be properly configured** before running Packer with `associate_public_ip_address = true` (default):
 
-| Resource | Requirement |
-|----------|-------------|
-| **VPC** | Must exist with Internet Gateway attached |
-| **Subnet** | At least one subnet in the VPC |
-| **Route Table** | Route `0.0.0.0/0` → Internet Gateway (for public IP access) |
+| Resource | Requirement | Why Required |
+|----------|-------------|--------------|
+| **VPC** | Must exist with Internet Gateway attached | Internet Gateway is required to associate public IPs to VMs. Without IGW, public IP linking will fail with 409 Conflict error. |
+| **Internet Gateway** | Attached to VPC | Enables internet connectivity for VMs with public IPs |
+| **Subnet** | At least one subnet in the VPC | VMs are launched in a subnet. Auto-discovered if only one exists, or specify `subnet_id`. |
+| **Route Table** | Associated with subnet, route `0.0.0.0/0` → Internet Gateway | Routes outbound traffic from VM to internet via IGW |
+
+> **Important:** If the VPC does not have an Internet Gateway attached, the plugin will create the VM and allocate a public IP, but **cannot link the public IP**. This results in:
+> - SSH connection timeout (no public IP reachable)
+> - Build hangs waiting for SSH
+> - Error: `409 Conflict: Resource conflict` when linking public IP
+
+#### Checking Your VPC Configuration
+
+Verify your network setup before running Packer:
+
+```bash
+# 1. Get subnet's VPC ID
+curl -H "Authorization: Bearer $TOKEN" \
+  "${NUMSPOT_HOST}/compute/spaces/${NUMSPOT_SPACE_ID}/subnets/${SUBNET_ID}" | jq '{vpcId, availabilityZoneName}'
+
+# 2. Verify VPC has Internet Gateway attached
+curl -H "Authorization: Bearer $TOKEN" \
+  "${NUMSPOT_HOST}/compute/spaces/${NUMSPOT_SPACE_ID}/vpcs/${VPC_ID}" | jq '.internetGatewayId'
+# Should return IGW ID (not null)
+
+# 3. Verify route table is associated with subnet
+curl -H "Authorization: Bearer $TOKEN" \
+  "${NUMSPOT_HOST}/compute/spaces/${NUMSPOT_SPACE_ID}/routeTables" | jq '.items[] | select(.subnetId == "'${SUBNET_ID}'")'
+
+# 4. CRITICAL: Verify route 0.0.0.0/0 exists and points to IGW
+curl -H "Authorization: Bearer $TOKEN" \
+  "${NUMSPOT_HOST}/compute/spaces/${NUMSPOT_SPACE_ID}/routeTables" | \
+  jq '.items[] | select(.vpcId == "'${VPC_ID}'") | .routes[] | select(.destination == "0.0.0.0/0")'
+# Should return: {"destination": "0.0.0.0/0", "target": "igw-xxxxx"}
+```
+
+#### Quick Setup
+
+If you don't have a VPC with IGW, you can:
+
+1. **Use an existing VPC** that already has IGW attached
+2. **Create and attach IGW** to your current VPC:
+   ```bash
+   # 1. Create Internet Gateway
+   # 2. Attach IGW to VPC
+   # 3. Create or identify a route table
+   # 4. Associate route table with subnet
+   # 5. CRITICAL: Add route 0.0.0.0/0 → IGW in route table
+   #    Without this route, VMs cannot reach internet even with IGW attached!
+   ```
+
+> **Common Mistake:** Creating and attaching Internet Gateway is necessary but **not sufficient**. You MUST also:
+> 1. Associate the route table with your subnet
+> 2. Add a route in that table: `0.0.0.0/0` → `igw-xxxxx`
+> 
+> Without the route, builds will timeout waiting for SSH even though everything else is configured.
 
 > **Note:** The plugin auto-discovers a subnet if only one exists. If multiple subnets exist, specify `subnet_id` or use `subnet_filter`.
 
@@ -71,7 +114,7 @@ packer {
   required_plugins {
     numspot = {
       version = ">= 0.1.0"
-      source  = "github.com/numspot/numspot"
+      source  = "github.com/numspot/packer-plugin-numspot"
     }
   }
 }
@@ -177,6 +220,61 @@ export NUMSPOT_SPACE_ID="<your-space-id>"
 packer build template.pkr.hcl
 ```
 
+## Datasource: `numspot-bsu` image
+
+The `image` datasource resolves a Numspot image by filter **before** the build starts.
+It is useful when you don't want to hardcode an image ID in your template.
+
+### Usage
+
+```hcl
+data "numspot-bsu" "image" "base" {
+  client_id     = var.client_id
+  client_secret = var.client_secret
+  space_id      = var.space_id
+
+  filters = {
+    name = "Ubuntu-22.04-latest"
+  }
+  most_recent = true
+}
+
+source "numspot-bsu" "example" {
+  # ...
+  source_image = data.numspot-bsu.image.base.id
+}
+```
+
+### Filter keys
+
+| Key | Description |
+|---|---|
+| `name` | Image name (exact match) |
+| `id` | Image ID |
+| `state` | Image state (`available`, `pending`, `failed`) |
+| `architecture` | Architecture (e.g. `x86_64`) |
+| `description` | Image description |
+| `root_device_type` | Root device type |
+| `root_device_name` | Root device name |
+
+### Output attributes
+
+| Attribute | Description |
+|---|---|
+| `id` | Image ID (e.g. `ami-bf56f9be`) |
+| `name` | Image name |
+| `description` | Image description |
+| `creation_date` | Creation date (ISO 8601) |
+| `state` | Image state |
+| `architecture` | Architecture |
+| `root_device_name` | Root device name |
+| `root_device_type` | Root device type |
+| `tags` | Map of tags |
+
+> **Note:** Unlike the Outscale equivalent, `owners` is optional — your space already scopes image visibility.
+
+See the [image-filter example](./examples/image-filter/) for a full working template.
+
 ## Builder: `numspot-bsu`
 
 The BSU (Block Storage Unit) builder creates images from existing source images.
@@ -196,18 +294,27 @@ The BSU (Block Storage Unit) builder creates images from existing source images.
 - `source_image` - ID of the source image (or use `source_image_filter`)
 - `image_name` - Name for the resulting image
 - `vm_type` - VM type to use during build
+- `subnet_id` - **Strongly recommended**: Subnet ID with proper network setup
+
+> **Important:** While `subnet_id` is technically optional (auto-discovery works with single subnet), explicit configuration is **strongly recommended** to ensure:
+> - Subnet has Internet Gateway attached to its VPC
+> - Route table is properly associated with subnet
+> - Route `0.0.0.0/0` points to IGW
+> - Build configuration is explicit and reproducible
+>
+> Auto-discovery can fail silently if the discovered subnet lacks proper network configuration, resulting in SSH timeouts or public IP linking failures.
 
 ### Network Requirements
 
 For `associate_public_ip_address = true` (default):
 
 1. **Internet Gateway** attached to VPC
-2. **Route table** with `0.0.0.0/0` → IGW
+2. **Route table** associated with subnet, route `0.0.0.0/0` → IGW
 3. **Security Group** created automatically (allows SSH port 22)
-4. **Subnet** - auto-discovered if not specified, or set explicitly:
+4. **Subnet** - specify explicitly for reliable builds:
 
 ```hcl
-subnet_id = "<your-subnet-id>"
+subnet_id = "<your-subnet-id>"  # Subnet with IGW + route table setup
 ```
 
 ### VM Types
@@ -299,11 +406,11 @@ See the [Troubleshooting Guide](./docs/troubleshooting.md) for common issues and
 
 ## License
 
-[License information]
+[License](./LICENSE)
 
 ## References
 
-- [Outscale Packer Plugin](https://github.com/outscale/packer-plugin-outscale) (original implementation)
+- [Outscale Packer Plugin](https://github.com/outscale/packer-plugin-outscale) (forked)
 - [Numspot Terraform Provider](https://github.com/numspot/terraform-provider-numspot)
 - [Packer Plugin SDK](https://github.com/hashicorp/packer-plugin-sdk)
 - [oapi-codegen](https://github.com/deepmap/oapi-codegen)

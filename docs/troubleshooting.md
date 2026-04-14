@@ -90,12 +90,6 @@ The `compute.all` permission covers all operations needed by the plugin.
 **Solution:**
 Set `space_id` in your Packer template or via environment variable:
 
-```bash
-export NUMSPOT_SPACE_ID="673bb25a-294d-4ded-b1dd-b63a7d701ea6"
-```
-
----
-
 ## Network Errors
 
 ### Error: VpcId is required but not found
@@ -109,7 +103,7 @@ Either:
 
 ```hcl
 source "numspot-bsu" "example" {
-  subnet_id = "subnet-0111f5de"
+  subnet_id = "subnet-1234abcd"
   # ...
 }
 ```
