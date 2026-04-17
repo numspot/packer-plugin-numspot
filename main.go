@@ -26,6 +26,6 @@ func main() {
 
 var (
 	pluginVersion = version.NewPluginVersion(semver, prerelease, "")
-	semver        = "0.1.0"
+	semver        = "0.1.1"
 	prerelease    = ""
 )

@@ -114,7 +114,7 @@ packer {
   required_plugins {
     numspot = {
       version = ">= 0.1.0"
-      source  = "github.com/numspot/packer-plugin-numspot"
+      source  = "github.com/numspot/numspot"
     }
   }
 }
@@ -228,7 +228,7 @@ It is useful when you don't want to hardcode an image ID in your template.
 ### Usage
 
 ```hcl
-data "numspot-bsu" "image" "base" {
+data "numspot-image" "base" {
   client_id     = var.client_id
   client_secret = var.client_secret
   space_id      = var.space_id
@@ -241,7 +241,7 @@ data "numspot-bsu" "image" "base" {
 
 source "numspot-bsu" "example" {
   # ...
-  source_image = data.numspot-bsu.image.base.id
+  source_image = data.numspot-image.base.id
 }
 ```
 

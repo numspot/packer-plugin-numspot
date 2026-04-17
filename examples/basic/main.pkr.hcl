@@ -35,6 +35,7 @@ build {
 
   provisioner "shell" {
     inline = [
+      "sudo rm -f /etc/apt/sources.list.d/*backports*",
       "sudo apt-get update",
       "sudo apt-get install -y nginx",
       "sudo systemctl enable nginx",

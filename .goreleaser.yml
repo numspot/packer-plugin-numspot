@@ -24,10 +24,10 @@ builds:
 
 archives:
   - format: zip
-    name_template: 'packer-plugin-numspot_{{ .Version }}_x5.0_{{ .Os }}_{{ .Arch }}'
+    name_template: 'packer-plugin-numspot_v{{ .Version }}_x5.0_{{ .Os }}_{{ .Arch }}'
 
 checksum:
-  name_template: 'packer-plugin-numspot_{{ .Version }}_SHA256SUMS'
+  name_template: 'packer-plugin-numspot_v{{ .Version }}_SHA256SUMS'
   algorithm: sha256
 
 signs:

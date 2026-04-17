@@ -24,3 +24,9 @@ variable "subnet_id" {
   type        = string
   description = "Subnet ID with Internet Gateway and route table setup (strongly recommended to specify explicitly)"
 }
+
+variable "source_image_name" {
+  type        = string
+  default     = "debian-12"
+  description = "Source image name pattern to filter"
+}

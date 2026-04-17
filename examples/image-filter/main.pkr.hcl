@@ -9,7 +9,7 @@ packer {
 
 # Resolve the source image dynamically before the build starts.
 # This avoids hardcoding an image ID and always picks the latest matching image.
-data "numspot-bsu" "image" "base" {
+data "numspot-image" "base" {
   client_id     = var.client_id
   client_secret = var.client_secret
   space_id      = var.space_id
@@ -26,7 +26,7 @@ source "numspot-bsu" "image-filter" {
   space_id      = var.space_id
 
   # Image ID resolved by the datasource above
-  source_image = data.numspot-bsu.image.base.id
+  source_image = data.numspot-image.base.id
 
   image_name   = "image-filter-example-${formatdate("YYYY-MM-DD-hhmm", timestamp())}"
   vm_type      = "ns-eco7-2c2r"
@@ -38,7 +38,7 @@ source "numspot-bsu" "image-filter" {
 
   tags = {
     Name        = "image-filter-example"
-    SourceImage = data.numspot-bsu.image.base.name
+    SourceImage = data.numspot-image.base.name
     Environment = "dev"
     ManagedBy   = "packer"
   }
@@ -49,6 +49,7 @@ build {
 
   provisioner "shell" {
     inline = [
+      "sudo rm -f /etc/apt/sources.list.d/*backports*",
       "sudo apt-get update",
       "sudo apt-get install -y nginx",
       "sudo systemctl enable nginx",

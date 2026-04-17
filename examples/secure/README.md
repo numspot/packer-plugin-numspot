@@ -9,6 +9,10 @@ Creates a security-hardened image with firewall, automatic updates, and SSH hard
 export PKR_VAR_client_id="<your-client-id>"
 export PKR_VAR_client_secret="<your-client-secret>"
 export PKR_VAR_space_id="<your-space-id>"
+export PKR_VAR_subnet_id="<your-subnet-id>"
+
+# Use either datasource with image name or directly imageId
+export PKR_VAR_source_image_name="<your-image-name>"
 
 # Optionally restrict SSH access to your IP range
 export PKR_VAR_allowed_ssh_cidr="203.0.113.0/24"
@@ -50,9 +54,10 @@ packer build .
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `allowed_ssh_cidr` | `10.0.0.0/8` | CIDR block for SSH access during build |
+| `source_image_name` | `debian-11` | Source image name pattern to filter |
+| `subnet_id` | (required) | Subnet ID with IGW and route table setup |
 
-> **Important:** Set `allowed_ssh_cidr` to your specific IP range for production builds.
+> **Note:** The image datasource dynamically resolves the latest matching image, avoiding hardcoded AMI IDs.
 
 ## Files
 
